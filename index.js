@@ -225,8 +225,8 @@ function Cryptox (exchangeSlug, options) {
 		if (err)
 			return callback(err, {timestamp: util.timestampNow(), error: err.message, data: []});
 
-		exchange.getActiveOffers(options, function (err, orderBook){
-			callback(err, orderBook);
+		exchange.postOffer(options, function (err, offerResult){
+			callback(err, offerResult);
 		});
 	};
 
