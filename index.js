@@ -237,7 +237,7 @@ function Cryptox (exchangeSlug, options) {
 		if (err)
 			return callback(err, {timestamp: util.timestampNow(), error: err.message, data: []});
 
-		exchange.getActiveOffers(options, function (err, orderBook){
+		exchange.cancelOffer(options, function (err, orderBook){
 			callback(err, orderBook);
 		});
 	};
